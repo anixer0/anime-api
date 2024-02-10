@@ -34,7 +34,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.status(200).json('Welcome to GogoAnime API!');
+    res.status(200).json('Welcome To ANIMXER API!');
 });
 
 app.get('/search', async(req, res) => {
