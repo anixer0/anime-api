@@ -10,7 +10,7 @@ import { extractFembed } from './helpers/extractors/fembed.js';
 import { USER_AGENT, renameKey } from './utils.js';
 
 const BASE_URL = 'https://gogoanime.film/';
-const BASE_URL2 = 'https://gogoanime.gg/';
+const BASE_URL2 = 'https://www.gogoanime.tw/';
 const ajax_url = 'https://ajax.gogo-load.com/';
 const anime_info_url = 'https://gogoanime.film/category/';
 const anime_movies_path = '/anime-movies.html';
@@ -27,7 +27,7 @@ const goload_stream_url = 'https://goload.pro/streaming.php';
 export const DownloadReferer = 'https://goload.pro/';
 
 const disqus_iframe = (episodeId) =>
- `https://disqus.com/embed/comments/?base=default&f=gogoanimetv&t_u=https%3A%2F%2Fgogoanime.vc%2F${episodeId}&s_o=default#version=cfefa856cbcd7efb87102e7242c9a829`;
+ `https://disqus.com/embed/comments/?base=default&f=gogoanimetv&t_u=https%3A%2F%2Fwww.gogoanime.tw%2F${episodeId}&s_o=default#version=cfefa856cbcd7efb87102e7242c9a829`;
 const disqus_api = (threadId, page) =>
  `https://disqus.com/api/3.0/threads/listPostsThreaded?limit=100&thread=${threadId}&forum=gogoanimetv&order=popular&cursor=${page}:0:0&api_key=E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F`;
 
@@ -409,7 +409,7 @@ export const scrapeAnimeDetails = async ({ id }) => {
   let genres = [];
   let epList = [];
 
-  const animePageTest = await axios.get(`https://gogoanime.gg/category/${id}`);
+  const animePageTest = await axios.get(`https://www.gogoanime.tw/category/${id}`);
 
   const $ = cheerio.load(animePageTest.data);
 
@@ -548,7 +548,7 @@ export const scrapeThread = async ({ episodeId, page = 0 }) => {
 //     try {
 //         const download_links = [];
 
-//         const e_page = await axios.get(`https://gogoanime.gg/${episodeId}`);
+//         const e_page = await axios.get(`https://www.gogoanime.tw/${episodeId}`);
 
 //         const $ = cheerio.load(e_page.data);
 
